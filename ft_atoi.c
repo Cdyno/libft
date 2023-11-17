@@ -6,7 +6,7 @@
 /*   By: olmohame <olmohame@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 02:27:26 by olmohame          #+#    #+#             */
-/*   Updated: 2023/11/16 12:48:26 by olmohame         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:59:25 by olmohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ static int	ft_isspace(char c)
 				|| c == '\v' || c == '\n');
 }
 
-static int	handle_flow(long num, int dig)
+static int	detect_flow(long num, int dig)
 {
-	long long	llong_max;
-
-	llong_max = ((unsigned long long)(-1)) / 2;
-	if (num > llong_max / 10)
+	if (num > LONG_MAX / 10)
 		return (1);
-	else if(num * 10 > (llong_max - dig))
+	else if (num * 10 > (LONG_MAX - dig))
 		return (1);
 	return (0);
 }
@@ -49,7 +46,7 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(str[i]) && str[i])
 	{
-		if (handle_flow(num, str[i] - '0'))
+		if (detect_flow(num, str[i] - '0'))
 			return (-1 * track_sign);
 		num = (num) * 10 + str[i] - '0';
 		i++;
