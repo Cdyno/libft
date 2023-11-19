@@ -6,7 +6,7 @@
 /*   By: olmohame <olmohame@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 05:26:56 by olmohame          #+#    #+#             */
-/*   Updated: 2023/11/14 09:01:12 by olmohame         ###   ########.fr       */
+/*   Updated: 2023/11/19 08:53:03 by olmohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int	len;
 
 	start = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (in(s1[start], set))
 		start++;
 	end = ft_strlen(s1) - 1;

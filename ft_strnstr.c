@@ -6,7 +6,7 @@
 /*   By: olmohame <olmohame@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 03:14:43 by olmohame          #+#    #+#             */
-/*   Updated: 2023/11/15 03:23:19 by olmohame         ###   ########.fr       */
+/*   Updated: 2023/11/19 08:47:17 by olmohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *str, const char *needle, size_t len)
 	size_t	str_len;
 
 	i = 0;
+	if (!str && !len)
+		return (NULL);
 	needle_len = ft_strlen(needle);
 	str_len = ft_strlen(str);
 	if (needle_len == 0)

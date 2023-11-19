@@ -6,7 +6,7 @@
 /*   By: olmohame <olmohame@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 02:59:46 by olmohame          #+#    #+#             */
-/*   Updated: 2023/11/16 05:25:31 by olmohame         ###   ########.fr       */
+/*   Updated: 2023/11/19 08:55:40 by olmohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	res = (char *)ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!res)
 		return (NULL);
