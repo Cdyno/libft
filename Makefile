@@ -6,7 +6,7 @@
 #    By: olmohame <olmohame@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/17 17:06:33 by olmohame          #+#    #+#              #
-#    Updated: 2023/11/19 09:46:42 by olmohame         ###   ########.fr        #
+#    Updated: 2023/11/19 11:02:18 by olmohame         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ B_OBJS    = $(BONUS:.c=.o)
 
 CC    = gcc
 
-CFLAGS    = -Wall -Wextra -Werror
+CFLAGS   = -Wall -Wextra -Werror
 
-all:    $(NAME)
+all : $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -crs $(NAME) $(OBJS)
